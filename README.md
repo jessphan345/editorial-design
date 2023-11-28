@@ -1,5 +1,9 @@
-# DESN 368 Web Design 1 Starter Template
+# Editorial Design Title
 
-> **NOTE:** This is a work in progress.
+> just some note
 
-DIY Template, starter, boilerplate, prototype, etc. for future Web Design projects. 
+even more notes. a whole lot of notes. body text of notes. 
+
+## Citations
+* [Favicon](https://favicon.io/)
+* [FontShare](https://www.fontshare.com/)
