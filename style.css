@@ -1,3 +1,4 @@
+@import url('assets/fonts-name.css')
 
 html,
 body {
@@ -25,6 +26,8 @@ body {
   box-sizing: border-box;
 
   padding: 3em;
+
+  ;
 }
 
 .one {
