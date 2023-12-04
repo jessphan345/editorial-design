@@ -7,45 +7,31 @@
 // Install Plugin
 gsap.registerPlugin(ScrollTrigger);
 
-// defaults
-ScrollTrigger.defaults({
-  toggleActions: "restart pause resume pause"
-});
+let getRatio = (el) =>
+  window.innerHeight / (window.innerHeight + el.offsetHeight);
 
-// Panel One
-gsap.to(".one h1", {
-  scrollTrigger: "one",
-  backgroundColor: "blue",
-  duration: 1,
-  rotate: 0,
-  opacity: 1
-});
+gsap.utils.toArray("section").forEach((section, i) => {
+  section.bg = section.querySelector(".bg");
 
-// Panel Two
-gsap.to(".two", {
-  scrollTrigger: "two"
-});
-
-// Panel Three
-gsap.to(".three p", {
-  scrollTrigger: "three",
-  duration: 5,
-  letterSpacing: 0
-});
-
-// Panel Four
-gsap.to(".four", {
-  scrollTrigger: "four"
-});
-
-// Panel Five
-gsap.to(".five", {
-  scrollTrigger: "five"
-});
-
-// Panel six
-gsap.to(".six", {
-  scrollTrigger: "six",
-  translateX: 0,
-  duration: 5
+  // the first image (i === 0) should be handled differently because it should start at the very top.
+  // use function-based values in order to keep things responsive
+  gsap.fromTo(
+    section.bg,
+    {
+      backgroundPosition: () =>
+        i ? `50% ${-window.innerHeight * getRatio(section)}px` : "50% 0px"
+    },
+    {
+      backgroundPosition: () =>
+        `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+      ease: "none",
+      scrollTrigger: {
+        trigger: section,
+        start: () => (i ? "top bottom" : "top top"),
+        end: "bottom top",
+        scrub: true,
+        invalidateOnRefresh: true // to make it responsive
+      }
+    }
+  );
 });

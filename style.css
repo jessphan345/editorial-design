@@ -1,5 +1,6 @@
-@import url('assets/fonts-name.css')
+<link href="https://fonts.googleapis.com/css2?family=Hedvig+Letters+Serif:opsz@12..24&family=Rubik&display=swap" rel="stylesheet"> 
 
+/* Setup Scrolling */
 html,
 body {
   margin: 0;
@@ -17,50 +18,55 @@ body {
 .panel {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
+  display: grid;
+  grid: repeat(5, 150px) / auto-flow 200px;
   position: relative;
   box-sizing: border-box;
 
-  padding: 3em;
+  padding: 4em;
+}
 
-  ;
+/* Container for Background Images  */
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .one {
-  background: #fff;
+  background-image: url("https://healthiersteps.com/wp-content/uploads/2022/02/dark-green-vegetables.jpeg");
 }
 
 .two {
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Marketvegetables.jpg/640px-Marketvegetables.jpg) no-repeat;
-  object-fit: cover;
+  background-image: url("https://www.sftslab.com/assets/images/service/large/VEGETABLES-TESTING-SERVICES-736x325.jpg");
 }
 
 .three {
-  background: #bdc3c7;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/f/f2/Persea_americana_fruit_2.JPG");
 }
 
 .four {
-  background: #7b7d7d;
+  background-image: url("https://bonnieplants.com/cdn/shop/products/chile-de-arbol-hot-pepper.jpg?v=1642629956");
 }
 
 .five {
-  background: #333;
+  background-image: url("https://cdn.britannica.com/90/126690-050-A1379A34/Garden-pea-pods.jpg");
 }
 
-.six {
-transform: translateX(-450px) 
+section {
+  color: white;
 }
 
-.one h1 {
-  color: pink;
-  transform: rotate(90deg);
-  opacity: 0;
+h1 {
+  font-family: "Rubik", sans-serif;
 }
 
-.three p {
-  letter-spacing: 100px;
+p {
+  font-family: "Hedvig Letters Serif", serif;
 }
